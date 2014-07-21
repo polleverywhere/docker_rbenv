@@ -13,9 +13,6 @@ RUN apt-get -q clean
 RUN git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
 RUN git clone https://github.com/sstephenson/ruby-build.git \
   $HOME/.rbenv/plugins/ruby-build
-  
+
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.profile
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bashrc
-
-RUN rbenv install 2.1.2
-RUN rbenv global 2.1.2
