@@ -1,13 +1,19 @@
 FROM ubuntu:trusty
 MAINTAINER Andy Shinn <andy@polleverywhere.com>
 
+RUN locale-gen en_US.UTF-8
+
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
 ENV PATH $HOME/.rbenv/bin:$PATH
+ENV SHELL /bin/bash
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 RUN apt-get -q update
 RUN apt-get -q -y install build-essential curl git zlib1g-dev libssl-dev \
-  libreadline-dev libyaml-dev libxml2-dev libxslt-dev
+  libreadline-dev libyaml-dev libxml2-dev libxslt-dev bison llvm \
+  libncurses5-dev libmysqlclient-dev
 RUN apt-get -q clean
 
 RUN git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
