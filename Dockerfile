@@ -5,7 +5,7 @@ RUN locale-gen en_US.UTF-8
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV HOME /root
-ENV PATH $HOME/.rbenv/bin:$PATH
+ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 ENV SHELL /bin/bash
 ENV LANG en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
